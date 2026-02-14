@@ -48,6 +48,22 @@
         "documentation": {}
     },
     {
+        "label": "Mail",
+        "importPath": "flask_mail",
+        "description": "flask_mail",
+        "isExtraImport": true,
+        "detail": "flask_mail",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "flask_mail",
+        "description": "flask_mail",
+        "isExtraImport": true,
+        "detail": "flask_mail",
+        "documentation": {}
+    },
+    {
         "label": "Form",
         "kind": 6,
         "importPath": "app",
@@ -70,7 +86,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask(__name__)\n# Configure application settings\napp.config[\"SECRET_KEY\"] = \"mysecretkey\"\napp.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# Initialize database instance\ndb = SQLAlchemy(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):",
+        "peekOfCode": "app = Flask(__name__)\n# Configure application settings\napp.config[\"SECRET_KEY\"] = \"mysecretkey\"\napp.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# mail server\napp.config[\"MAIL_SERVER\"] = \"smtp.gmail.com\"\napp.config[\"MAIL_PORT\"] = 465\napp.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"",
         "detail": "app",
         "documentation": {}
     },
@@ -79,7 +95,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app.config[\"SECRET_KEY\"] = \"mysecretkey\"\napp.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# Initialize database instance\ndb = SQLAlchemy(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)",
+        "peekOfCode": "app.config[\"SECRET_KEY\"] = \"mysecretkey\"\napp.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# mail server\napp.config[\"MAIL_SERVER\"] = \"smtp.gmail.com\"\napp.config[\"MAIL_PORT\"] = 465\napp.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance",
         "detail": "app",
         "documentation": {}
     },
@@ -88,7 +104,52 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# Initialize database instance\ndb = SQLAlchemy(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)\n    first_name = db.Column(db.String(80), nullable=False)",
+        "peekOfCode": "app.config[\"SQLALCHEMY_DATABASE_URI\"] = \"sqlite:///data.db\"\n# mail server\napp.config[\"MAIL_SERVER\"] = \"smtp.gmail.com\"\napp.config[\"MAIL_PORT\"] = 465\napp.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"MAIL_SERVER\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"MAIL_SERVER\"] = \"smtp.gmail.com\"\napp.config[\"MAIL_PORT\"] = 465\napp.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"MAIL_PORT\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"MAIL_PORT\"] = 465\napp.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"MAIL_USE_SSL\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"MAIL_USE_SSL\"] = True\n# Configure email settings\napp.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"MAIL_USERNAME\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"MAIL_USERNAME\"] = \"your_email_address\"\napp.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app.config[\"MAIL_PASSWORD\"]",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app.config[\"MAIL_PASSWORD\"] = \"your_gmail_password\"\n# Initialize database instance\ndb = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)",
         "detail": "app",
         "documentation": {}
     },
@@ -97,7 +158,16 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "db = SQLAlchemy(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)\n    first_name = db.Column(db.String(80), nullable=False)\n    last_name = db.Column(db.String(80), nullable=False)\n    email = db.Column(db.String(80), nullable=False)",
+        "peekOfCode": "db = SQLAlchemy(app)\nmail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)\n    first_name = db.Column(db.String(80), nullable=False)\n    last_name = db.Column(db.String(80), nullable=False)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "mail",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "mail = Mail(app)\n# -----------------------------\n# DEFINE DATABASE MODEL\n# -----------------------------\nclass Form(db.Model):\n    # Define table columns with data types\n    id = db.Column(db.Integer, primary_key=True)\n    first_name = db.Column(db.String(80), nullable=False)\n    last_name = db.Column(db.String(80), nullable=False)\n    email = db.Column(db.String(80), nullable=False)",
         "detail": "app",
         "documentation": {}
     }
