@@ -1,7 +1,7 @@
 # -----------------------------
 # IMPORT REQUIRED MODULES
 # -----------------------------
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -64,6 +64,7 @@ def index():
         )
         db.session.add(form)  # Add form data to the database
         db.session.commit()  # Commit changes to the database
+        flash(f"{first_name} Form was submitted successfully✅", "success")
 
     return render_template("index.html")
 

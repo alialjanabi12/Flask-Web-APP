@@ -24,6 +24,14 @@
         "documentation": {}
     },
     {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "SQLAlchemy",
         "importPath": "flask_sqlalchemy",
         "description": "flask_sqlalchemy",
