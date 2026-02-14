@@ -3,7 +3,7 @@
 # -----------------------------
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import datetime
 
 # -----------------------------
 # CREATE FLASK APPLICATION
@@ -49,7 +49,21 @@ def index():
         last_name = request.form["last_name"]
         email = request.form["email"]
         date = request.form["date"]
+        data_obj = datetime.strptime(
+            date, "%Y-%m-%d"
+        )  # convert date into a datetime object
+
         occupation = request.form["occupation"]
+
+        form = Form(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            date=data_obj,
+            occupation=occupation,
+        )
+        db.session.add(form)  # Add form data to the database
+        db.session.commit()  # Commit changes to the database
 
     return render_template("index.html")
 
