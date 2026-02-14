@@ -16,11 +16,19 @@
         "documentation": {}
     },
     {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "index",
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n# -----------------\n# execute the app\n# -----------------\napp.run(debug=True, port=5001)",
+        "peekOfCode": "def index():\n    print(request.method)\n    if request.method == \"POST\":\n        first_name = request.form[\"first_name\"]\n        last_name = request.form[\"last_name\"]\n        email = request.form[\"email\"]\n        date = request.form[\"date\"]\n        occupation = request.form[\"occupation\"]\n    return render_template(\"index.html\")\n\"\"\"-----------------",
         "detail": "app",
         "documentation": {}
     },
@@ -29,7 +37,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\n# -----------------\n# execute the app\n# -----------------\napp.run(debug=True, port=5001)",
+        "peekOfCode": "app = Flask(__name__)\n\"\"\"-----------------\ncreate a route , this url will handle both get and post request\n    - 'post' is when the user submits the form\n    - 'get' is when the user navigates to the page\n    - add <form method=\"post\"> in the html under the form\n-----------------\"\"\"\n@app.route(\"/\", methods=[\"GET\", \"POST\"])\ndef index():\n    print(request.method)",
         "detail": "app",
         "documentation": {}
     }
